@@ -1,8 +1,5 @@
 export const bucketify = (inputString: string, num: number): string[] => {
-  if (!inputString) return [];
-
   const words = inputString.trim().split(' ');
-
   let buckets = [];
   let newWord;
 
@@ -24,5 +21,5 @@ export const bucketify = (inputString: string, num: number): string[] => {
     }
   }
 
-  return buckets.length ? buckets : [''];
+  return buckets.length ? buckets : [];
 };

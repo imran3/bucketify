@@ -136,7 +136,7 @@ describe('bucketify tests', () => {
       // arrange
       const sentence = 'this sentence has num too small for any word here';
       const num = 2;
-      const expectedRes: string[] = [''];
+      const expectedRes: string[] = [];
 
       // act
       const res = bucketify(sentence, num);
@@ -149,7 +149,7 @@ describe('bucketify tests', () => {
       // arrange
       const sentence = 'this sentence has num too small for any word here';
       const num = -12;
-      const expectedRes: string[] = [''];
+      const expectedRes: string[] = [];
 
       // act
       const res = bucketify(sentence, num);

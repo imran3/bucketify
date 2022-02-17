@@ -1,18 +1,19 @@
 {
-  "name": "ts-unit-test",
+  "name": "bucketify",
+  "description": "Implementation of the bucketify sentence, code challenge.",
   "version": "1.0.0",
-  "description": "Sample project for unit testing Typescript code.",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
   "author": "Imran Azam",
   "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "test": "jest"
+  },
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
     "jest": "^27.3.1",
     "ts-jest": "^27.0.7",
+    "ts-node": "^10.5.0",
     "typescript": "^4.4.4"
   }
 }

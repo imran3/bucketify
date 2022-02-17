@@ -1,30 +1,28 @@
 export const bucketify = (inputString: string, num: number): string[] => {
-  let words = inputString.split(" ");
+  if (!inputString) return [];
+
+  const words = inputString.trim().split(' ');
 
   let buckets = [];
-  let newWord: string | undefined;
+  let newWord;
 
-  let stop = false;
-  while (words.length > 0 && !stop) {
+  while (words.length > 0) {
     newWord = words.shift();
 
-    if (!newWord) break;
+    if (newWord) {
+      // skip word if too large
+      if (newWord.length > num) continue;
 
-    // skip word if too large
-    if (newWord && newWord.length > num) continue;
+      if (buckets.length === 0) {
+        buckets.push(newWord);
+        continue;
+      }
 
-    // push new element into buckets
-    buckets.push(newWord);
-
-    // chain as many words as possible new element in buckets
-    while (
-      words.length &&
-      buckets[buckets.length - 1].length + words[0].length + 1 <= num
-    ) {
-      newWord = words.shift();
-      buckets[buckets.length - 1] += " " + newWord;
+      buckets[buckets.length - 1].length + newWord.length + 1 <= num
+        ? (buckets[buckets.length - 1] += ' ' + newWord)
+        : buckets.push(newWord);
     }
   }
 
-  return buckets;
+  return buckets.length ? buckets : [''];
 };

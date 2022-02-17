@@ -1,51 +1,21 @@
-# ts-unit-test
+# Bucketify: What's that?
 
-Simple project with an example setup for unit testing Typescript code.
+An algorithm which divides a sentence into `word buckets`, where each bucket contains `n` or fewer characters. Only complete words can be placed into each bucket. Spaces count as a character, however you should trim leading and trailing spaces from words as they're placed into buckets. If a word is too large to fit into a bucket, it should be discarded.
 
-# Summary of steps for project scaffolding
+#### Example
 
-### 1. Install dependencies
+For the following input:
 
-`npm install --save-dev @types/jest @types/node jest ts-jest typescript`
+`bucketify("the quick brown fox jumps over the lazy dog", 10)`
 
-### 2. Create jest.config.jsfile
+the algorithm returns:
 
-Root folder: src/
-Test files: any files ending with `.spec.ts` or `.test.ts`
+`["the quick", "brown fox", "jumps over", "the lazy", "dog"]`
 
-```
-module.exports = {
-  roots: ['<rootDir>/src'],
-  transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-  },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-}
-```
+# How do it run this locally?
 
-### 3. Create tsconfig.json file
+You need Node.js to run this project. The following commands are available:
 
-```
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": ["es2015"],
-    "strict": true,
-    "declaration": true,
-    "outDir": "dist",
-    "sourceMap": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
-}
-```
+`npm run start`: executes algorithm using above example's as inputs.
 
-### 4. Add test script to package.json file
-
-```
-"scripts": {
-    "test": "jest"
- },
-```
+`npm run test`: executes unit tests suite for `bucketify` function

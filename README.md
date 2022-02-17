@@ -16,6 +16,8 @@ the algorithm returns:
 
 You need Node.js to run this project. The following commands are available:
 
+`npm install`: installs the project's dependencies.
+
 `npm run start`: executes algorithm using above example's as inputs.
 
-`npm run test`: executes unit tests suite for `bucketify` function
+`npm run test`: executes unit tests suite for `bucketify` function.
